@@ -1,0 +1,5 @@
+*.zip
+*SavedVariables*
+__pycache__/
+*.py[cod]
+/graft/

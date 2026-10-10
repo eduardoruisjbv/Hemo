@@ -1,0 +1,6 @@
+package-as: Hemo
+ignore:
+    - .gitignore
+    - README.md
+    - NOTICE.md
+    - tools/
