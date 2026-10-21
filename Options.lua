@@ -22,8 +22,8 @@ local function Build()
   end
 
   local TAGS = {
-    recommended = { "|cff66dd88[Recommended]|r ", "Recommended to keep enabled for the core low-health effect." },
-    optional = { "|cffe0c060[Optional]|r ", "Optional: personal preference; leave disabled if you prefer a quieter screen." },
+    recommended = { "|cff66dd88[Recomendado]|r ", "Recomendado manter ativo para o efeito principal de vida baixa." },
+    optional = { "|cffe0c060[Opcional]|r ", "Opcional: preferência pessoal; ajuste a gosto." },
   }
 
   local function Tagged(tag, label, tooltip)
@@ -33,15 +33,12 @@ local function Build()
   end
 
   local function Legend()
-    Header("Legend")
-    if layout and CreateSettingsListTextEntryInitializer then
-      layout:AddInitializer(CreateSettingsListTextEntryInitializer(
-        "|cff66dd88[Recommended]|r Keep enabled for the core Hemo effect."
-      ))
-      layout:AddInitializer(CreateSettingsListTextEntryInitializer(
-        "|cffe0c060[Optional]|r Personal preference; adjust to taste."
-      ))
-    end
+    if not (layout and CreateSettingsListTextEntryInitializer) then return end
+    Header("Legenda")
+    layout:AddInitializer(CreateSettingsListTextEntryInitializer(
+      TAGS.recommended[1] .. "Mantenha ativo para o efeito principal do Hemo."))
+    layout:AddInitializer(CreateSettingsListTextEntryInitializer(
+      TAGS.optional[1] .. "Preferência pessoal; ajuste a gosto."))
   end
 
   local function Register(key, varType, label)
@@ -78,7 +75,7 @@ local function Build()
     "Desenha o dano do crítico com respingo de sangue. Os números normais da Blizzard continuam como estão.", "optional")
   Percent("critNumberSize", "Tamanho do número", 50, 200, "Tamanho do número de crítico.", "optional")
   Checkbox("critSchools", "Efeito por escola de dano",
-    "Ativa estilos associados à escola do golpe. As escolas têm configurações próprias, mas atualmente compartilham o visual de sangue vermelho.", "optional")
+    "Reservado: por enquanto todo crítico usa o sangue vermelho, qualquer que seja a escola.", "optional")
   Checkbox("critTaken", "Ao receber crítico",
     "Número de sangue e flash na tela, num lado aleatório (o jogo não informa a direção do golpe). Não funciona quando o jogo esconde o tipo do golpe, como em chefes e Mítica+.", "optional")
   Checkbox("critDealt", "Ao acertar crítico",

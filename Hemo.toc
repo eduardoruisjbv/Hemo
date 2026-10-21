@@ -1,8 +1,8 @@
-## Interface: 120100
+## Interface: 120105, 120100
 ## Title: Hemo
 ## Notes: Sangue nas bordas da tela com vida baixa e sangue de crítico (vermelho para todas as escolas).
 ## Author: Eduardo Rui
-## Version: 0.2.1-alpha.1
+## Version: 0.2.1-alpha.2
 ## SavedVariables: HemoDB
 
 Core.lua
