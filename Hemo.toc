@@ -7,6 +7,6 @@
 
 Core.lua
 Schools.lua
-
+Blood.lua
 Crit.lua
 Options.lua
